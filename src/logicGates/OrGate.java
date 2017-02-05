@@ -37,8 +37,4 @@ public class OrGate extends Gate
         }
     }
 
-    @Override
-    public void print() {
-
-    }
 }

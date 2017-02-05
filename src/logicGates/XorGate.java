@@ -39,8 +39,4 @@ public class XorGate extends Gate
         }
     }
 
-    @Override
-    public void print() {
-
-    }
 }

@@ -100,8 +100,27 @@ public abstract class Gate
     public  void print()
     {
         String gateType = this.getClass().toString();
+        int index = gateType.indexOf(".");
+        gateType= gateType.substring(index+1);
         System.out.println("Gate type: "+ gateType+" inputs: "+ inputA+", "+inputB +
                 "\noutput: " + output);
+
+    }
+    public void test()
+    {
+        set(false,false);
+        execute();
+        print();
+        set(false,true);
+        execute();
+        print();
+        set(true,false);
+        execute();
+        print();
+        set(true,true);
+        execute();
+        print();
+        System.out.println("=====================\n\n");
     }
     public abstract void execute();
 

@@ -1,5 +1,5 @@
 package logicGates;
-import java.lang.*;
+
 /**
  * Created by Nova on 2/1/2017.
  */
@@ -61,6 +61,20 @@ public class NotGate extends Gate
     @Override
     public void setWireB(Wire wireB) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void test()
+    {
+        set(false);
+        execute();
+        print();
+
+        set(true);
+        execute();
+        print();
+
+        System.out.println("=====================\n\n");
     }
 
     @Override
