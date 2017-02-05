@@ -20,7 +20,21 @@ public class OrGate extends Gate
     @Override
     public void execute()
     {
+        if(wireA != null )
+        {
+            inputA = wireA.getValue();
+        }
+
+        if(wireB != null )
+        {
+            inputB = wireB.getValue();
+        }
         output = inputA | inputB;
+
+        if (wireOutput != null)
+        {
+            wireOutput.setValue(output);
+        }
     }
 
     @Override

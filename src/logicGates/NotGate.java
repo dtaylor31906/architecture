@@ -38,7 +38,17 @@ public class NotGate extends Gate
     @Override
     public void execute()
     {
+        if(wireA != null )
+        {
+            inputA = wireA.getValue();
+        }
+
         output = !inputA;
+
+        if (wireOutput != null)
+        {
+            wireOutput.setValue(output);
+        }
     }
 
     @Override
@@ -46,6 +56,16 @@ public class NotGate extends Gate
     {
         System.out.println("Gate type: NotGate  input: "+ inputA+
                 "\noutput: " + output);
+    }
+
+    @Override
+    public void setWireB(Wire wireB) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Wire getWireB() {
+        throw new UnsupportedOperationException();
     }
 
     @Override

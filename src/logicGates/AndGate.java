@@ -21,12 +21,23 @@ public class AndGate extends Gate
     @Override
     public void execute()
     {
+        //check for input wires and set inputs equal to the wire value
+        if(wireA != null )
+        {
+            inputA = wireA.getValue();
+        }
+
+        if(wireB != null )
+        {
+            inputB = wireB.getValue();
+        }
+
         output = inputA &inputB;
+
+        if (wireOutput != null)
+        {
+            wireOutput.setValue(output);
+        }
     }
 
-    @Override
-    public void print()
-    {
-
-    }
 }

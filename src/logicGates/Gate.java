@@ -6,6 +6,7 @@ package logicGates;
 public abstract class Gate
 {
      boolean output,inputA,inputB;
+     Wire wireA,wireB, wireOutput;
      int inputCount;
      int truthCount;//count of inputs that are == true
 
@@ -65,7 +66,32 @@ public abstract class Gate
         this.inputB = inputB;
     }
 
-     void getTruthCount()// counts the number of inputs set to "true" for the current gate\
+    public Wire getWireA()
+    {
+        return wireA;
+    }
+
+    public void setWireA(Wire wireA) {
+        this.wireA = wireA;
+    }
+
+    public Wire getWireB() {
+        return wireB;
+    }
+
+    public void setWireB(Wire wireB) {
+        this.wireB = wireB;
+    }
+
+    public Wire getWireOutput() {
+        return wireOutput;
+    }
+
+    public void setWireOutput(Wire wireOutput) {
+        this.wireOutput = wireOutput;
+    }
+
+    void getTruthCount()// counts the number of inputs set to "true" for the current gate\
      {
          truthCount = 0;
          if(inputA) truthCount++;
