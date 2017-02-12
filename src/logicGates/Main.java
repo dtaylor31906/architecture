@@ -1,5 +1,7 @@
 package logicGates;
 
+import EightBit.EightBitALU;
+
 public class Main {
 
     public static void main(String[] args)
@@ -10,13 +12,14 @@ public class Main {
 	    NotGate n1 = new NotGate();
         HalfAdder h1 = new HalfAdder("half adder");
         FullAdder f1 = new FullAdder("full adder");
-        FourBitALU ALU = new FourBitALU("4-bit ALU");
-	    a1.test();
+        EightBitALU ALU = new EightBitALU();
+	    /*a1.test();
 	    o1.test();
 	    x1.test();
 	    n1.test();
         h1.test();
-        f1.test();
+        f1.test();*/
+
 	   ALU.test();
 
     }

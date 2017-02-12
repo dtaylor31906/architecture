@@ -7,15 +7,28 @@ public class FourBitWord
 {
     private boolean a,b,c,d;//d is msb
     private String binary;
-
+    private final int WORDLENGTH = 4;
     public FourBitWord(boolean d, boolean c, boolean b, boolean a)
     {
+
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
     }
+    public FourBitWord(boolean[] word)
+    {
+        if(word.length != WORDLENGTH)
+        {
+            System.out.println("This is not  4-bits ");
+            return;
+        }
+        this.a = word[0];
+        this.b = word[1];
+        this.c = word[2];
+        this.d = word[3];
 
+    }
     public boolean getA() {
         return a;
     }

@@ -103,7 +103,8 @@ public class FourBitALU
         wordOutput = new FourBitWord(s3.getValue(),s2.getValue(),s1.getValue(),s0.getValue());
     }
 
-    private void executeOrGates()
+
+    public void executeOrGates()
     {
         x0.execute();
         x1.execute();
@@ -111,7 +112,7 @@ public class FourBitALU
         x3.execute();
     }
 
-    private void enterWordB() 
+    private void enterWordB()
     {
         b0.setValue(wordB.getA());
         b1.setValue(wordB.getB());
@@ -119,7 +120,7 @@ public class FourBitALU
         b3.setValue(wordB.getD());
     }
 
-    private void enterWordA() 
+    private void enterWordA()
     {
         a0.setValue(wordA.getA());
         a1.setValue(wordA.getB());
@@ -131,12 +132,15 @@ public class FourBitALU
     {
         FourBitWord word = new FourBitWord(d,b,c,a);
         this.wordA = word;
+        enterWordA();
     }
+
 
     public void setWordB(boolean d, boolean c, boolean b, boolean a)
     {
         FourBitWord word = new FourBitWord(d,b,c,a);
         this.wordB = word;
+        enterWordB();
     }
 
     public FourBitWord getWordA() {
@@ -145,6 +149,7 @@ public class FourBitALU
 
     public void setWordA(FourBitWord wordA) {
         this.wordA = wordA;
+        enterWordA();
     }
 
     public FourBitWord getWordB() {
@@ -153,6 +158,7 @@ public class FourBitALU
 
     public void setWordB(FourBitWord wordB) {
         this.wordB = wordB;
+        enterWordB();
     }
 
     public void print()
@@ -206,5 +212,110 @@ public class FourBitALU
         setWordB(true,true,true,true);
         exec(false);
         print();
+    }
+
+    public FullAdder getFa0() {
+        return fa0;
+    }
+
+    public FullAdder getFa1() {
+        return fa1;
+    }
+
+    public FullAdder getFa2() {
+        return fa2;
+    }
+
+    public FullAdder getFa3() {
+        return fa3;
+    }
+
+    public Wire getA0() {
+        return a0;
+    }
+
+    public Wire getA1() {
+        return a1;
+    }
+
+    public Wire getA2() {
+        return a2;
+    }
+
+    public Wire getA3() {
+        return a3;
+    }
+
+    public Wire getB0() {
+        return b0;
+    }
+
+    public Wire getB1() {
+        return b1;
+    }
+
+    public Wire getB2() {
+        return b2;
+    }
+
+    public Wire getB3() {
+        return b3;
+    }
+
+    public Wire getS0() {
+        return s0;
+    }
+
+    public Wire getS1() {
+        return s1;
+    }
+
+    public Wire getS2() {
+        return s2;
+    }
+
+    public Wire getS3() {
+        return s3;
+    }
+
+    public Wire getC0() {
+        return c0;
+    }
+
+    public Wire getC1() {
+        return c1;
+    }
+
+    public Wire getC2() {
+        return c2;
+    }
+
+    public Wire getC3() {
+        return c3;
+    }
+
+    public Wire getOp() {
+        return op;
+    }
+
+    public void setOp(Wire op)
+    {
+        x0.setWireB(op);
+        x1.setWireB(op);
+        x2.setWireB(op);
+        x3.setWireB(op);
+    }
+
+    public FourBitWord getWordOutput() {
+        return wordOutput;
+    }
+
+    public void partialExecution()
+    {
+        fa0.exec();
+        fa1.exec();
+        fa2.exec();
+        fa3.exec();
+        wordOutput = new FourBitWord(s3.getValue(),s2.getValue(),s1.getValue(),s0.getValue());
     }
 }

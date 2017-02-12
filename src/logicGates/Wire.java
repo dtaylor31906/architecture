@@ -26,4 +26,11 @@ public class Wire
         this.value = value;
     }
 
+    public String getBinValue()
+    {
+        if(value)
+            return "1";
+        else
+            return "0";
+    }
 }
