@@ -96,4 +96,18 @@ public class EightBitWord
         result[1] = new FourBitWord(temp);
         return result;
     }
+    //flips every bit in the word
+    public void negate()
+    {
+        for (int i = 0; i < word.length; i++)
+        {
+            word[i] = !word[i];
+        }
+
+        findBinRepresentation();
+    }
+
+    public boolean[] getWord() {
+        return word;
+    }
 }
